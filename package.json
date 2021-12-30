@@ -1,0 +1,41 @@
+{
+  "name": "build-tools",
+  "version": "1.0.0",
+  "description": "Инструменты сборки Web-проектов",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clear": "rimraf build",
+    "dev": "npm run clear & npx webpack --mode=development",
+    "build": "npm run clear & npx webpack --mode=production",
+    "serve": "npm run clear & npx webpack serve --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K-Real-Mh/Build-tools.git"
+  },
+  "author": "Cyrill Makhov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/K-Real-Mh/Build-tools/issues"
+  },
+  "homepage": "https://github.com/K-Real-Mh/Build-tools#readme",
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "rimraf": "^3.0.2",
+    "sass": "^1.45.1",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2"
+  },
+  "dependencies": {
+    "howler": "^2.2.3",
+    "luxon": "^2.2.0",
+    "webpack-bundle-analyzer": "^4.5.0"
+  }
+}

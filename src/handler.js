@@ -1,6 +1,6 @@
 import {formatError, renderDiff} from "./utils.js";
-import {DateTime} from "./luxon.js";
-import './howler.js';
+import DateTime from 'luxon/src/datetime';
+import {Howl} from "howler";
 
 const errors = {
     calcDates: 'Для расчета промежутка необходимо заполнить оба поля',
@@ -23,7 +23,10 @@ export const handler = (type, result, event) => {
 
     if (type === 'timer') {
         const sound = new Howl({
-            src: ['./audio/end.mp3']
+            src: [require('./audio/end.mp3').default],
+            onloaderror(id, err) {
+                console.warn('failed to load sound file:', { id, err })
+            }
         });
         let {time, stop} = event.target.elements;
         time = time.value.split(':');
